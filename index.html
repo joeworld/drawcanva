@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello World</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box; /** prevent bizarre elements or space */
+			-moz-box-sizing: border-box;
+			user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			-moz-user-select: none;
+		}
+
+		#toolbar{
+			width: 100%;
+			height: 50px;
+			/** Put on to canvas */
+			position: fixed; 
+			top: 0;
+			background-color: #2f2f2f;
+			color: white;
+		}
+
+		.radcontrol{
+			width: 30px;
+			height: 30px;
+			background-color: #4f4f4f;
+			display: inline-block;
+			text-align: center;
+			padding: 5px;
+		}
+
+		#rad{
+			margin-top: 10px
+		}
+	</style>
+</head>
+<body style="margin: 0px">
+
+<div id="toolbar">
+	<div id="rad">
+		Radius <span id="radval">10</span>
+		<div id="decrad" class="radcontrol">-</div>
+		<div id="incrad" class="radcontrol">+</div>
+		Color:
+		<select id="fillBackground">
+			<option value="black">Black</option>
+			<option value="red">Red</option>
+			<option value="green">Green</option>
+			<option value="blue">Blue</option>
+			<option value="yellow">Yellow</option>
+			<option value="grey">Grey</option>
+		</select>
+		<a href="#" id="downloadCanvas" onclick="downloadImage()" download="image.png" >Download Canvas Image</a>
+	</div>
+</div>
+
+<!-- Canvas are inline by default which means a line height is appended to each elements drawn -->
+<canvas id="canvas" style="display: block;" ></canvas>
+
+<script src="js/index.js"></script>
+
+<script src="js/radius.js"></script>
+
+</body>
+</html>
